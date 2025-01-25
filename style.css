@@ -1,5 +1,9 @@
 /*LAYOUT*/
 
+.hidden {
+  display: none;
+}
+
 /*STYLING*/
 
 .library-book {

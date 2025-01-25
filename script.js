@@ -43,38 +43,37 @@ myLibrary.forEach((Book) => {
   library.innerHTML = booksToDisplay;
 
   console.log(booksToDisplay);
-
-  //create all of the elements to house the information
-  // let libraryBook = document.createElement("div");
-  // libraryBook.setAttribute("class", "library-book");
-  // let bookTitle = document.createElement("p");
-  // bookTitle.setAttribute("class", "book-title");
-  // let bookAuthor = document.createElement("p");
-  // bookAuthor.setAttribute("class", "book-author");
-  // let bookPages = document.createElement("p");
-  // bookPages.setAttribute("class", "book-pages");
-  // let bookIsRead = document.createElement("p");
-  // bookIsRead.setAttribute("class", "book-isRead");
-
-  // append the paragraphs to the div
-  // libraryBook.appendChild(bookTitle);
-  // libraryBook.appendChild(bookAuthor);
-  // libraryBook.appendChild(bookPages);
-  // libraryBook.appendChild(bookIsRead);
-
-  // console.log(libraryBook);
-
-  // get and set attributes from books in array
-  // bookTitle.innerHTML = Book.title;
-  // bookAuthor.innerHTML = Book.author;
-  // bookPages.innerHTML = Book.pages;
-  // bookIsRead.innerHTML = Book.read;
-  // libraryBook.appendChild(Book.title);
-  // create p for title and set attribute
-  // create p for author and set attribute
-  // create p for pages and set attribute
-  // create p for read or not and set attribute
 });
+
+function showForm() {
+  //check this function is being accessed
+  console.log("show form button clicked");
+  //if display = none then make display inline
+  let libraryForm = document.getElementById("library-form");
+  libraryForm.classList.toggle("hidden");
+}
+
+document
+  .getElementById("library-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    console.log("form submission initialised");
+
+    //get the values from the form submission
+    Book.title = event.target.title.value;
+    Book.author = event.target.author.value;
+    Book.pages = event.target.pages.value;
+    Book.read - event.target.read.value;
+
+    function addBookToLibrary(title, author, pages, read) {
+      const newBook = new Book(title, author, pages, read);
+
+      myLibrary.push(newBook);
+    }
+
+    addBookToLibrary();
+    console.log(myLibrary);
+  });
 
 // idea section below
 
@@ -92,3 +91,34 @@ myLibrary.forEach((Book) => {
 //     projectObject.projectMedium = event.target.medium.value;
 //     para.innerHTML = `My project is called ${projectObject.projectName} and I'm going to be ${projectObject.projectMedium} it`;
 //   });
+
+//create all of the elements to house the information
+// let libraryBook = document.createElement("div");
+// libraryBook.setAttribute("class", "library-book");
+// let bookTitle = document.createElement("p");
+// bookTitle.setAttribute("class", "book-title");
+// let bookAuthor = document.createElement("p");
+// bookAuthor.setAttribute("class", "book-author");
+// let bookPages = document.createElement("p");
+// bookPages.setAttribute("class", "book-pages");
+// let bookIsRead = document.createElement("p");
+// bookIsRead.setAttribute("class", "book-isRead");
+
+// append the paragraphs to the div
+// libraryBook.appendChild(bookTitle);
+// libraryBook.appendChild(bookAuthor);
+// libraryBook.appendChild(bookPages);
+// libraryBook.appendChild(bookIsRead);
+
+// console.log(libraryBook);
+
+// get and set attributes from books in array
+// bookTitle.innerHTML = Book.title;
+// bookAuthor.innerHTML = Book.author;
+// bookPages.innerHTML = Book.pages;
+// bookIsRead.innerHTML = Book.read;
+// libraryBook.appendChild(Book.title);
+// create p for title and set attribute
+// create p for author and set attribute
+// create p for pages and set attribute
+// create p for read or not and set attribute
