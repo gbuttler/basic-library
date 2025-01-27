@@ -9,6 +9,14 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.readStatus = function () {
+    if (this.read == true) {
+      console.log("read status can be changed");
+      return "Read";
+    } else {
+      return "Not read";
+    }
+  };
 }
 
 // function that will add a new book to the library
@@ -19,28 +27,33 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 // dummy new books for test purposes
-addBookToLibrary("Turning Pages", "A. Round", "139 pages", "Read");
+addBookToLibrary("Turning Pages", "A. Round", "139 pages", false);
 
-addBookToLibrary("Blah", "A. Blaj", "3 pages", "Read");
+addBookToLibrary("Blah", "A. Blaj", "3 pages", true);
 
-addBookToLibrary("blegh ", "blegh", "139000 pages", "Not read");
+addBookToLibrary("blegh ", "blegh", "139000 pages", false);
+
+// //function to display read status
+// function displayReadStatus() {}
 
 // function to display book on HTML page
 function displayLibrary() {
   //set book display to empty
   let booksToDisplay = "";
+
+  console.log(myLibrary);
+
   myLibrary.forEach((Book) => {
     //check that the book info is being recieved
     console.log(Book.title);
-
+    checkIfRead();
     // append to the HTML
     booksToDisplay += `
   <div class="library-book">
         <p class="book-title">${Book.title}</p>
         <p class="book-author">${Book.author}</p>
         <p class="book-pages">${Book.pages}</p>
-        <p class="book-isRead">${Book.read}</p>
-        <input type="checkbox" id="read-checkbox">
+        <p class="book-isRead">${Book.readStatus()}</p>
         <p class='book-read-status' id="book-read" style="display:none">Read</p>
         <p class='book-read-status' id="book-not-read" style="display:none">Not read</p>
         <button class=delete-book-button>Delete Book</button>
@@ -48,6 +61,7 @@ function displayLibrary() {
   `;
 
     library.innerHTML = booksToDisplay;
+    console.log(Book.read);
   });
 }
 
@@ -74,25 +88,25 @@ document
     Book.title = event.target.title.value;
     Book.author = event.target.author.value;
     Book.pages = event.target.pages.value;
-    Book.read = event.target.read.value;
+    Book.read = event.target.read.checked;
 
     addBookToLibrary(Book.title, Book.author, Book.pages, Book.read);
     displayLibrary();
+    checkIfRead();
 
     console.log(myLibrary);
   });
 
 //function to check if book is read
-
 function checkIfRead() {
-  let readCheckbox = document.getElementById("read-checkbox");
-  let yesRead = document.getElementById("book-read");
-  let notRead = document.getElementById("book-not-read");
-
-  //tick box if book is marked as read in the object
-  if (Book.read === "Read") {
-    yesRead.style.display = "block";
+  if ((Book.read = true)) {
+    console.log("this book is read");
   } else {
-    notRead.style.display = "block";
+    console.log("this is NOT read");
   }
 }
+
+//check to see if a book is 'Read' or 'Not read'
+//if read make the button green and say 'read'
+//if not read make the burron red and say 'not read'
+// use an if statement to mean that on the click it will toggle back and forth
