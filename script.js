@@ -42,11 +42,12 @@ function displayLibrary() {
   let booksToDisplay = "";
 
   console.log(myLibrary);
+  let i = 0;
 
   myLibrary.forEach((Book) => {
     //check that the book info is being recieved
     console.log(Book.title);
-    checkIfRead();
+
     // append to the HTML
     booksToDisplay += `
   <div class="library-book">
@@ -54,14 +55,14 @@ function displayLibrary() {
         <p class="book-author">${Book.author}</p>
         <p class="book-pages">${Book.pages}</p>
         <p class="book-isRead">${Book.readStatus()}</p>
-        <p class='book-read-status' id="book-read" style="display:none">Read</p>
-        <p class='book-read-status' id="book-not-read" style="display:none">Not read</p>
-        <button class=delete-book-button>Delete Book</button>
+        <button class='change-read-status-button' onclick='changeReadStatus(${i})'>Change read status</button>
+        <button class=delete-book-button onclick='deleteBook()'>Delete Book</button>
       </div>
   `;
 
     library.innerHTML = booksToDisplay;
     console.log(Book.read);
+    i++;
   });
 }
 
@@ -92,21 +93,27 @@ document
 
     addBookToLibrary(Book.title, Book.author, Book.pages, Book.read);
     displayLibrary();
-    checkIfRead();
 
     console.log(myLibrary);
   });
 
-//function to check if book is read
-function checkIfRead() {
-  if ((Book.read = true)) {
-    console.log("this book is read");
+//function to allow you to toggle the read status
+function changeReadStatus(i) {
+  console.log("button click");
+  let bookStatus = myLibrary[i];
+  console.log(bookStatus.read);
+  if (bookStatus.read === true) {
+    bookStatus.read = false;
   } else {
-    console.log("this is NOT read");
+    bookStatus.read = true;
   }
+  displayLibrary();
 }
 
-//check to see if a book is 'Read' or 'Not read'
-//if read make the button green and say 'read'
-//if not read make the burron red and say 'not read'
-// use an if statement to mean that on the click it will toggle back and forth
+//function to delete a book
+function deleteBook(i) {
+  myLibrary.splice(i, 1);
+  displayLibrary();
+  console.log("book deleted");
+  console.log(myLibrary);
+}
