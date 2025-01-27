@@ -1,12 +1,141 @@
-/*LAYOUT*/
+/*CUSTOM COLOURS*/
+:root {
+  --darkest-green: #152826;
+  --dark-brown: #3e1f13;
+  --muted-red: #6d3a36;
+  --copper: #a3753e;
+  --lighest-brown: #b1a295;
+}
 
+/*FONTS*/
+.saira-condensed-thin {
+  font-family: "Saira Condensed", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.saira-condensed-extralight {
+  font-family: "Saira Condensed", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.saira-condensed-light {
+  font-family: "Saira Condensed", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.saira-condensed-regular {
+  font-family: "Saira Condensed", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.saira-condensed-medium {
+  font-family: "Saira Condensed", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.saira-condensed-semibold {
+  font-family: "Saira Condensed", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.saira-condensed-bold {
+  font-family: "Saira Condensed", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.saira-condensed-extrabold {
+  font-family: "Saira Condensed", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.saira-condensed-black {
+  font-family: "Saira Condensed", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/*LAYOUT*/
 .hidden {
   display: none;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 70px;
+  margin: 20px;
+}
+
+.new-book-button {
+  width: 100px;
+  background-color: #3e1f13;
+  color: #a8988a;
+  margin-bottom: 10px;
+}
+
+.form-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.form-indv-option {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.form-read-option {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-content: center;
+}
+
+.form-submit-button {
+  display: grid;
+  justify-content: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.library {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 /*STYLING*/
+* {
+  padding: 2px;
+  background-color: var(--lighest-brown);
+  font-family: "Saira Condensed", serif;
+}
 
 .library-book {
   border: 2px solid black;
   margin: 2px;
 }
+
+/*to do
+- separate header colour
+- change font sizes
+- change card formatting
+- add a delete and read icon
+- curve card edges
+- style buttons
+
+*/

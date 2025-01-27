@@ -27,14 +27,11 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 // dummy new books for test purposes
-addBookToLibrary("Turning Pages", "A. Round", "139 pages", false);
+addBookToLibrary("Outlander", "	Diana Gabaldon", "850 pages", true);
 
-addBookToLibrary("Blah", "A. Blaj", "3 pages", true);
+addBookToLibrary("North and South", "	Elizabeth Gaskell", "480 pages", true);
 
-addBookToLibrary("blegh ", "blegh", "139000 pages", false);
-
-// //function to display read status
-// function displayReadStatus() {}
+addBookToLibrary("Oliver Twist ", "Charles Dickens", "608 pages", false);
 
 // function to display book on HTML page
 function displayLibrary() {
@@ -56,7 +53,7 @@ function displayLibrary() {
         <p class="book-pages">${Book.pages}</p>
         <p class="book-isRead">${Book.readStatus()}</p>
         <button class='change-read-status-button' onclick='changeReadStatus(${i})'>Change read status</button>
-        <button class=delete-book-button onclick='deleteBook()'>Delete Book</button>
+        <button class=delete-book-button onclick='deleteBook(${i})'>Delete Book</button>
       </div>
   `;
 
@@ -73,7 +70,6 @@ displayLibrary();
 function showForm() {
   //check this function is being accessed
   console.log("show form button clicked");
-  //if display = none then make display inline
   let libraryForm = document.getElementById("library-form");
   libraryForm.classList.toggle("hidden");
 }
@@ -92,6 +88,10 @@ document
     Book.read = event.target.read.checked;
 
     addBookToLibrary(Book.title, Book.author, Book.pages, Book.read);
+
+    let libraryForm = document.getElementById("library-form");
+    libraryForm.classList.toggle("hidden");
+
     displayLibrary();
 
     console.log(myLibrary);
@@ -112,8 +112,8 @@ function changeReadStatus(i) {
 
 //function to delete a book
 function deleteBook(i) {
-  myLibrary.splice(i, 1);
+  let deleteBook = i;
+  newLibrary = myLibrary.splice(deleteBook, 1);
   displayLibrary();
   console.log("book deleted");
-  console.log(myLibrary);
 }
