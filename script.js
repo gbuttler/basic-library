@@ -27,13 +27,22 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 // dummy new books for test purposes
-addBookToLibrary("Outlander", "	Diana Gabaldon", "850 pages", true);
+addBookToLibrary("Outlander", "Diana Gabaldon", "850 pages", true);
+
+addBookToLibrary(
+  "Ultra Processed People",
+  "Chris van Tulleken",
+  "384 pages",
+  true
+);
 
 addBookToLibrary("North and South", "	Elizabeth Gaskell", "480 pages", true);
 
 addBookToLibrary("Oliver Twist ", "Charles Dickens", "608 pages", false);
 
 addBookToLibrary("The Noise of Time", "Julian Barnes", "192 pages", true);
+
+addBookToLibrary("The Three Body Problem", "Liu Cixin", "448 pages", true);
 
 // function to display book on HTML page
 function displayLibrary() {
