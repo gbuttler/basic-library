@@ -56,13 +56,9 @@ function displayLibrary() {
         <div class='book-bottom-line'>
           <div class='read-items'>
             <p class="book-isRead">${Book.readStatus()}</p>
-            <button class='change-read-status-button' onclick='changeReadStatus(${i})'>
-              <i class="fa-solid fa-book-open"></i>
-            </button>
+            <button class='change-read-status-button' onclick='changeReadStatus(${i})'><i class="fa-solid fa-book-open"></i></button>
           </div>
-          <button class=delete-book-button onclick='deleteBook(${i})'>
-            <i class="fa-solid fa-trash-can"></i>
-          </button>
+          <button class=delete-book-button onclick='deleteBook(${i})'><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </div>
   `;

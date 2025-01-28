@@ -211,12 +211,6 @@ form {
   font-size: 20px;
 }
 
-.book-author {
-}
-
-.book-pages {
-}
-
 .book-bottom-line {
   display: grid;
   grid-template-columns: 4fr 2fr;
@@ -241,6 +235,10 @@ form {
   font-size: 150%;
 }
 
+.change-read-status-button i:hover {
+  color: var(--muted-red);
+}
+
 .delete-book-button {
   padding: 0;
   border: none;
@@ -251,11 +249,7 @@ form {
   justify-self: end;
 }
 
-.delete-book-button:hover {
-  color: var(--muted-red);
-}
-
-.change-read-status-button:hover {
+.delete-book-button i:hover {
   color: var(--muted-red);
 }
 
