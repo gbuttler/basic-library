@@ -84,6 +84,7 @@ button {
 
 body {
   background-image: url("library-image.jpg");
+  background-size: cover;
   font-family: "Saira Condensed", serif;
 }
 
