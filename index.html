@@ -11,58 +11,69 @@
       href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/5798858965.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1 class="page-title">My Library</h1>
-    <button class="new-book-button" onclick="showForm()">Add New Book</button>
-    <form id="library-form" class="hidden" action method="GET">
-      <div class="form-options">
-        <div class="form-indv-option">
-          <label for="title">Book Title</label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            placeholder="Title here..."
-            minlength="3"
-            maxlength="100"
-            required
-          />
-        </div>
-        <div class="form-indv-option">
-          <label for="author">Book Author</label>
-          <input
-            type="text"
-            id="author"
-            name="author"
-            placeholder="Author here..."
-            minlength="3"
-            maxlength="100"
-            required
-          />
-        </div>
-        <div class="form-indv-option">
-          <label for="pages">Number of Pages</label>
-          <input
-            type="number"
-            id="pages"
-            name="pages"
-            placeholder="0"
-            min="1"
-            required
-          />
-        </div>
+    <div class="inner-body">
+      <div class="header">
+        <h1 class="page-title">My Library</h1>
       </div>
-      <div class="form-read-option">
-        <label for="read">Read</label>
-        <input type="checkbox" id="read" />
+      <div class="new-button-div">
+        <button class="new-book-button" onclick="showForm()">
+          Add New Book
+        </button>
       </div>
+      <form id="library-form" class="hidden" action method="GET">
+        <div class="form-options">
+          <div class="form-indv-option">
+            <label for="title">Book Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Title here..."
+              minlength="3"
+              maxlength="100"
+              required
+            />
+          </div>
+          <div class="form-indv-option">
+            <label for="author">Book Author</label>
+            <input
+              type="text"
+              id="author"
+              name="author"
+              placeholder="Author here..."
+              minlength="3"
+              maxlength="100"
+              required
+            />
+          </div>
+          <div class="form-indv-option">
+            <label for="pages">Number of Pages</label>
+            <input
+              type="number"
+              id="pages"
+              name="pages"
+              placeholder="0"
+              min="1"
+            />
+          </div>
+        </div>
+        <div class="form-read-option">
+          <label for="read">Read</label>
+          <input type="checkbox" id="read" />
+        </div>
 
-      <div class="form-submit-button">
-        <input id="submit-button" type="submit" />
-      </div>
-    </form>
-    <div class="library"></div>
+        <div class="form-submit-button">
+          <input id="submit-button" type="submit" />
+        </div>
+      </form>
+      <div class="library"></div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

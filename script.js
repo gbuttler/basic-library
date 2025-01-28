@@ -33,6 +33,8 @@ addBookToLibrary("North and South", "	Elizabeth Gaskell", "480 pages", true);
 
 addBookToLibrary("Oliver Twist ", "Charles Dickens", "608 pages", false);
 
+addBookToLibrary("The Noise of Time", "Julian Barnes", "192 pages", true);
+
 // function to display book on HTML page
 function displayLibrary() {
   //set book display to empty
@@ -47,13 +49,21 @@ function displayLibrary() {
 
     // append to the HTML
     booksToDisplay += `
-  <div class="library-book">
+      <div class="library-book">
         <p class="book-title">${Book.title}</p>
         <p class="book-author">${Book.author}</p>
         <p class="book-pages">${Book.pages}</p>
-        <p class="book-isRead">${Book.readStatus()}</p>
-        <button class='change-read-status-button' onclick='changeReadStatus(${i})'>Change read status</button>
-        <button class=delete-book-button onclick='deleteBook(${i})'>Delete Book</button>
+        <div class='book-bottom-line'>
+          <div class='read-items'>
+            <p class="book-isRead">${Book.readStatus()}</p>
+            <button class='change-read-status-button' onclick='changeReadStatus(${i})'>
+              <i class="fa-solid fa-book-open"></i>
+            </button>
+          </div>
+          <button class=delete-book-button onclick='deleteBook(${i})'>
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </div>
       </div>
   `;
 
@@ -95,6 +105,9 @@ document
     displayLibrary();
 
     console.log(myLibrary);
+
+    //reset the form after submit is pressed
+    document.getElementById("library-form").reset();
   });
 
 //function to allow you to toggle the read status

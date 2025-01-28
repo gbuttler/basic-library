@@ -34,4 +34,6 @@ function addBookToLibrary() {
 
 - To facilitate this you will want to create Book prototype function that toggles a book instance’s read status.
 
+Photo by Janko Ferlič on Unsplash
+
 _Inspired by 'The Odin Project'_

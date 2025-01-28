@@ -1,10 +1,16 @@
+/*GLOBAL*/
+* {
+  margin: 0;
+  color: var(--darkest-green);
+}
+
 /*CUSTOM COLOURS*/
 :root {
-  --darkest-green: #152826;
+  --darkest-green: #152827;
   --dark-brown: #3e1f13;
   --muted-red: #6d3a36;
   --copper: #a3753e;
-  --lighest-brown: #b1a295;
+  --lighest-brown: #dcd6d0;
 }
 
 /*FONTS*/
@@ -67,22 +73,68 @@
   display: none;
 }
 
+button {
+  width: 100px;
+  background-color: var(--darkest-green);
+  color: var(--lighest-brown);
+  border: 1px solid var(--darkest-green);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 body {
+  background-image: url("library-image.jpg");
+  font-family: "Saira Condensed", serif;
+}
+
+.inner-body {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.header {
+  width: 100%;
+  /* border-bottom: solid 2px var(--darkest-green); */
+  display: flex;
+  justify-content: center;
+  background-color: var(--lighest-brown);
+  position: relative;
+  box-shadow: 3px 3px 10px var(--darkest-green);
+}
+
 .page-title {
   font-size: 70px;
-  margin: 20px;
+  margin: 10px;
+  color: var(--darkest-green);
+  background-color: var(--lighest-brown);
+}
+
+.new-button-div {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .new-book-button {
-  width: 100px;
-  background-color: #3e1f13;
-  color: #a8988a;
-  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px var(--darkest-green);
+}
+
+.new-book-button:hover {
+  background-color: var(--muted-red);
+}
+
+form {
+  width: 100%;
+  background-color: white;
+  font-weight: bold;
 }
 
 .form-options {
@@ -104,6 +156,7 @@ body {
   grid-template-rows: 1fr;
   justify-content: center;
   align-content: center;
+  padding-top: 20px;
 }
 
 .form-submit-button {
@@ -111,23 +164,99 @@ body {
   justify-content: center;
   grid-column-start: 1;
   grid-column-end: 4;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#submit-button {
+  width: 100px;
+  height: 30px;
+  background-color: var(--darkest-green);
+  color: var(--lighest-brown);
+  border: 1px solid var(--darkest-green);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#submit-button:hover {
+  background-color: var(--muted-red);
 }
 
 .library {
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-/*STYLING*/
-* {
-  padding: 2px;
-  background-color: var(--lighest-brown);
-  font-family: "Saira Condensed", serif;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: white;
+  /* border-top: solid 2px var(--darkest-green); */
+  position: relative;
+  box-shadow: 1px -1px 9px var(--darkest-green);
 }
 
 .library-book {
-  border: 2px solid black;
-  margin: 2px;
+  background-color: var(--lighest-brown);
+  border: 1px solid var(--copper);
+  border-left: 7px solid var(--darkest-green);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+  margin: 10%;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.book-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.book-author {
+}
+
+.book-pages {
+}
+
+.book-bottom-line {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  align-items: center;
+}
+
+.read-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-isRead {
+  padding-right: 9px;
+}
+
+.change-read-status-button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--darkest-green);
+  width: fit-content;
+  font-size: 150%;
+}
+
+.delete-book-button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--darkest-green);
+  width: fit-content;
+  font-size: 150%;
+  justify-self: end;
+}
+
+.delete-book-button:hover {
+  color: var(--muted-red);
+}
+
+.change-read-status-button:hover {
+  color: var(--muted-red);
 }
 
 /*to do
@@ -137,5 +266,5 @@ body {
 - add a delete and read icon
 - curve card edges
 - style buttons
-
+- borders for header
 */
